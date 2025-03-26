@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="fav.png" type="image/x-icon"/>
+  <title>CS Poetry - Where Code Meets Creativity</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap">
+</head>
+<body class="binary-bg">
+  <header>
+    <div class="container flex justify-between items-center">
+      <h1 class="font-code text-cs-blue cursor">CS Poetry</h1>
+      <nav>
+        <div class="flex space-x-6">
+          <a href="#" class="active">Home</a>
+          <a href="#about">About</a>
+          <a href="#sonnets">Sonnets</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero flex flex-col items-center justify-center py-12">
+      <h2 class="text-cs-yellow mb-4">Where Code Meets Creativity</h2>
+      <p class="text-center mb-8">Explore sonnets written by Aaron and Sanvir that blend the worlds of computer science and poetry.</p>
+      <div class="code-snippet">
+        <pre class="text-cs-gray">
+<span class="text-cs-blue">function</span> <span class="text-cs-yellow">poetry</span>() {
+  <span class="text-cs-green">// Where logic meets art</span>
+  <span class="text-cs-blue">const</span> verse = <span class="text-cs-red">"In circuits deep where logic gates reside"</span>;
+  <span class="text-cs-blue">return</span> verse.split(<span class="text-cs-red">""</span>).map(
+    <span class="text-cs-blue">char</span> => creativity(char)
+  ).join(<span class="text-cs-red">""</span>);
+}</pre>
+      </div>
+      <a href="#sonnets" class="btn">Explore Sonnets</a>
+    </section>
+
+    <section id="sonnets" class="py-12">
+      <h2 class="text-cs-blue mb-8 text-center font-code">Sonnets</h2>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Sonnet cards will be inserted here by JavaScript -->
+      </div>
+    </section>
+    <h2 class="text-cs-red mb-8 text-center font-code">Comment Section</h2>
+    <center><p>You Must Have a GitHub Account to Leave Comments!</p></center><br><br>
+   <script src="https://giscus.app/client.js"
+        data-repo="Sanvir28/poem.github.io"
+        data-repo-id="R_kgDOOObIEw"
+        data-category="General"
+        data-category-id="DIC_kwDOOObIE84Coc5V"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+    
+    <section id="about" class="about py-12">
+      <h2 class="text-cs-green mb-8 text-center font-code">About This Project</h2>
+      <div class="about-content">
+        <p>This website showcases original sonnets written by Aaron and Sanvir, two computer science enthusiasts who found inspiration in the intersection of technology and poetry.</p>
+        <p>Each sonnet explores themes of computation, algorithms, and the beauty of code through the classical form of a sonnet with 14 lines of iambic pentameter.</p>
+        <p>The design of this website is inspired by code editors with their syntax highlighting, line numbers, and minimalist interface, bringing together the aesthetic of programming and the elegance of poetry.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container flex justify-between items-center">
+      <p class="text-cs-light-gray">© 2025 CS Poetry | Sanvir Singh & Aaron Castro</p>
+      <p class="text-cs-light-gray">In Partnership With <span class="text-cs-purple">GitCus</span> GitHub Comment Box Support | <span class="text-cs-green">HTML, CSS, JS</span></p>
+    </div>
+  </footer>
+
+  <script src="sonnets.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

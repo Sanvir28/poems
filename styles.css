@@ -1,0 +1,356 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cs-dark: #1E1E1E;
+  --cs-darker: #121212;
+  --cs-blue: #4285F4;
+  --cs-green: #34A853;
+  --cs-yellow: #FBBC05;
+  --cs-red: #EA4335;
+  --cs-gray: #E0E0E0;
+  --cs-purple: #9D00FF;
+  --cs-light-gray: #9AA0A6;
+  --cs-line: #333333;
+  --cs-selection: rgba(66, 133, 244, 0.3);
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: var(--cs-dark);
+  color: var(--cs-gray);
+  line-height: 1.6;
+}
+
+.font-code {
+  font-family: 'Source Code Pro', monospace;
+}
+
+.font-serif {
+  font-family: 'Merriweather', serif;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.space-x-6 > * + * {
+  margin-left: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-cs-blue {
+  color: var(--cs-blue);
+}
+
+.text-cs-green {
+  color: var(--cs-green);
+}
+
+.text-cs-yellow {
+  color: var(--cs-yellow);
+}
+
+.text-cs-red {
+  color: var(--cs-red);
+}
+
+.text-cs-gray {
+  color: var(--cs-gray);
+}
+
+.text-cs-light-gray {
+  color: var(--cs-light-gray);
+}
+
+/* Header */
+header {
+  background-color: var(--cs-darker);
+  border-bottom: 1px solid var(--cs-line);
+  padding: 1rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+nav a {
+  color: var(--cs-light-gray);
+  text-decoration: none;
+  transition: color 0.2s;
+  padding-bottom: 0.25rem;
+}
+
+nav a:hover {
+  color: var(--cs-yellow);
+}
+
+nav a.active {
+  color: var(--cs-blue);
+  border-bottom: 2px solid var(--cs-blue);
+}
+
+/* Sonnet Cards */
+.sonnet-card {
+  background-color: var(--cs-dark);
+  border-radius: 0.5rem;
+  border: 1px solid var(--cs-line);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sonnet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sonnet-header {
+  background: linear-gradient(to right, var(--cs-dark), var(--cs-darker));
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--cs-line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sonnet-initial {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+.author-section {
+  display: flex;
+  align-items: center;
+}
+
+.sonnet-title {
+  font-family: 'Source Code Pro', monospace;
+}
+
+.window-controls {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.window-controls span {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+}
+
+.sonnet-content {
+  padding: 1.5rem;
+}
+
+.line-numbers {
+  counter-reset: line;
+}
+
+.line-numbers p {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.line-numbers p::before {
+  counter-increment: line;
+  content: counter(line);
+  position: absolute;
+  left: 0;
+  color: var(--cs-light-gray);
+  text-align: right;
+  width: 2rem;
+  user-select: none;
+}
+
+.sonnet-footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--cs-line);
+}
+
+/* Hero Section */
+.hero {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+/* Code Snippet */
+.code-snippet {
+  background-color: var(--cs-darker);
+  border-radius: 0.5rem;
+  border: 1px solid var(--cs-line);
+  padding: 1rem;
+  font-family: 'Source Code Pro', monospace;
+  text-align: left;
+  margin: 0 auto 2rem;
+  max-width: 600px;
+  overflow-x: auto;
+}
+
+/* About Section */
+.about {
+  padding: 3rem 1rem;
+}
+
+.about h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.about-content {
+  background-color: var(--cs-darker);
+  border-radius: 0.5rem;
+  border: 1px solid var(--cs-line);
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-content p {
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--cs-darker);
+  border-top: 1px solid var(--cs-line);
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: var(--cs-blue);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: var(--cs-yellow);
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  background-color: var(--cs-blue);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  font-family: 'Source Code Pro', monospace;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background-color: #3b78e7;
+}
+
+/* Terminal blinking cursor effect */
+.cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Binary background */
+.binary-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23333333' fill-opacity='0.1'%3E%3Ctext x='5' y='15' font-family='monospace' font-size='10'%3E01001%3C/text%3E%3Ctext x='35' y='30' font-family='monospace' font-size='10'%3E110%3C/text%3E%3Ctext x='15' y='45' font-family='monospace' font-size='10'%3E0011%3C/text%3E%3Ctext x='55' y='60' font-family='monospace' font-size='10'%3E10%3C/text%3E%3Ctext x='25' y='75' font-family='monospace' font-size='10'%3E01100%3C/text%3E%3Ctext x='65' y='90' font-family='monospace' font-size='10'%3E1001%3C/text%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  header .flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  nav .flex {
+    justify-content: center;
+  }
+}
+
